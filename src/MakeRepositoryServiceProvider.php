@@ -16,5 +16,9 @@ class MakeRepositoryServiceProvider extends ServiceProvider
                 MakeModelWithRepository::class,
             ]);
         }
+
+        $this->publishes([
+            __DIR__ . '/../stubs/repository.stub' => base_path('stubs/repository.stub'),
+        ], 'make-repository-stubs');
     }
 }
