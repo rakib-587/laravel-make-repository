@@ -40,7 +40,7 @@ This will generate:
 ### ➤ Create a Repository with an Explicit Model
 
 ```bash
-php artisan make:repository InvoiceRepository --model=Invoice
+php artisan make:repository CustomerRepository --model=User
 ```
 
 This allows you to manually specify the model class to be used inside the repository.
@@ -60,17 +60,42 @@ This command:
 
 ---
 
-## 🧩 Customizing Stub
+## 🧩 Customizing the Stub
 
-The repository is generated using a stub located at:
+The repository class is generated using a stub file that defines its structure and placeholders.
+
+By default, the command looks for a local stub file in your Laravel project:
 
 ```
 stubs/repository.stub
 ```
 
-To customize the repository structure:
-1. Publish the stub file (optional in future versions).
-2. Edit the stub content and placeholders (`{{ modelName }}`, `{{ ClassName }}`).
+If the file **does not exist**, it will gracefully fall back to using the default stub provided by the package.
+
+---
+
+### ✏️ How to Customize
+
+To customize the repository structure, first publish the stub file into your project:
+
+```bash
+php artisan vendor:publish --tag=make-repository-stubs
+```
+
+This will copy the stub to:
+
+```
+stubs/repository.stub
+```
+
+You can now edit the stub to change the generated structure.
+
+Available placeholders:
+
+- `{{ ClassName }}` — The name of the generated repository class (e.g., `UserRepository`)
+- `{{ ModelName }}` — The associated model class (e.g., `User`)
+
+Once the stub exists in your project, it will automatically be used for all future repository generations.
 
 ---
 
@@ -111,5 +136,5 @@ This package is open-sourced software licensed under the [MIT license](LICENSE).
 
 ## 🙌 Author
 
-**Rakibul Islam**  
+**Md Rakibul Islam**  
 GitHub: [@rakib-587](https://github.com/rakib-587)
