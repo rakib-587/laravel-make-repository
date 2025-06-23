@@ -9,7 +9,7 @@ A lightweight Laravel package that provides Artisan commands to generate Reposit
 Require the package via Composer:
 
 ```bash
-composer require rakib-587/laravel-make-repository --dev
+composer require rakib-587/laravel-make-repository
 ```
 
 If you're using Laravel <10 and auto-discovery doesn't work, manually register the service provider in `config/app.php`:
@@ -27,7 +27,7 @@ If you're using Laravel <10 and auto-discovery doesn't work, manually register t
 ### ➤ Create a Repository for an Existing Model
 
 ```bash
-php artisan make:repository UserRepository
+php artisan make:repository User
 ```
 
 This will generate:
@@ -40,7 +40,7 @@ This will generate:
 ### ➤ Create a Repository with an Explicit Model
 
 ```bash
-php artisan make:repository CustomerRepository --model=User
+php artisan make:repository Customer --model=User
 ```
 
 This allows you to manually specify the model class to be used inside the repository.
@@ -104,7 +104,7 @@ Once the stub exists in your project, it will automatically be used for all futu
 When you run:
 
 ```bash
-php artisan make:repository OrderRepository --model=Order
+php artisan make:repository Order
 ```
 
 You'll get:
